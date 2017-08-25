@@ -31,4 +31,4 @@ The server should not contain any hard coded information. Rather, all informatio
 
 We would like you to treat this task as if you were doing it for a client - i.e. use the best practices that you would like to see in a piece of work for others. Keep in mind code formatting, project organization, documentation etc.
 
-Please create a branch from this repository and open a pull request when your work is ready for review.
+Please fork this repository into your personal account. When your work is ready for review, please send us a link.
