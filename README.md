@@ -29,6 +29,14 @@ GET /githubPayload
 
 The server should not contain any hard coded information. Rather, all information contained in the payload should come directly from Github's API.
 
+### Project Quality
+
 We would like you to treat this task as if you were doing it for a client - i.e. use the best practices that you would like to see in a piece of work for others. Keep in mind code formatting, project organization, documentation etc.
 
+### Project Submission
+
 Please fork this repository into your personal account. When your work is ready for review, please send us a link.
+
+### Help
+
+Please feel free to ping us with any questions you might have as you get going. Otherwise we are excited to see what you build!
