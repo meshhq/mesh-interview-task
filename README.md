@@ -23,7 +23,7 @@ GET /githubPayload
         name:
         url:
         commitCount:
-        pullRequestCountDay:
+        pullRequestCount:
       },
       {...}
     ]
