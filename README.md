@@ -1,6 +1,6 @@
 # Mesh Interview Task
 
-The Mesh interview task is to write a simple server that is integrated with the Github API. It can be written in whatever language you are most comfortable with. You can find all GitHub documentation at the following URL.
+The Mesh interview task is to write a simple server that is integrated with the GitHub API. It can be written in whatever language you are most comfortable with. You can find all GitHub documentation at the following URL.
 
 https://developer.github.com/
 
