@@ -27,7 +27,7 @@ GET /githubPayload
 }
 ```
 
-The server should not contain any hard coded information. Rather, all information contained in the payload should come directly from Github's API.
+The server should not contain any hard coded information. Rather, all information contained in the payload should come directly from Github's API. It is up to you how the integration should be build and the Github data should be processed. 
 
 ### Project Quality
 
