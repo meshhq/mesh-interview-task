@@ -1,8 +1,12 @@
 # Mesh Interview Task
 
-The Mesh interview task is to write a simple server that is integrated with the Github API. It can be written in whatever language you are most comfortable with.
+The Mesh interview task is to write a simple server that is integrated with the Github API. It can be written in whatever language you are most comfortable with. You can find all GitHub documentation at the following URL.
 
-The server should expose a single API that returns a user payload containing information about your personal Github account. The payload should look like the following:
+https://developer.github.com/
+
+### Implementation
+
+The server should expose a single API that returns a user payload containing information about your personal GitHub account. The payload should look like the following:
 
 ```
 GET /githubPayload
@@ -19,7 +23,7 @@ GET /githubPayload
         name:
         url:
         commitCount:
-        pullRequestCount:
+        pullRequestCountDay:
       },
       {...}
     ]
@@ -27,15 +31,22 @@ GET /githubPayload
 }
 ```
 
-The server should not contain any hard coded information. Rather, all information contained in the payload should come directly from Github's API. It is up to you how the integration should be build and the Github data should be processed. 
+### Considerations
 
-### Project Quality
+ * The server should not contain any hard coded information. Rather, all payload information should come directly from GitHub's API. It is up to determine you how the integration will be built and the GitHub data will be processed.
+ * Please be sure to strip out any personal information from your payload.
+
+### Quality
 
 We would like you to treat this task as if you were doing it for a client - i.e. use the best practices that you would like to see in a piece of work for others. Keep in mind code formatting, project organization, documentation etc.
 
 ### Project Submission
 
 Please fork this repository into your personal account. When your work is ready for review, please send us a link.
+
+### Time Expectation
+
+This task should not take you more than ~4 hours.
 
 ### Help
 
