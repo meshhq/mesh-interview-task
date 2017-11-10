@@ -1,0 +1,24 @@
+{
+  "name": "mesh-interview-task",
+  "version": "1.0.0",
+  "description": "Mesh Interview Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoJPerez/mesh-interview-task.git"
+  },
+  "keywords": [
+    "mesh",
+    "node",
+    "github"
+  ],
+  "author": "Leonardo J. Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoJPerez/mesh-interview-task/issues"
+  },
+  "homepage": "https://github.com/LeonardoJPerez/mesh-interview-task#readme"
+}
