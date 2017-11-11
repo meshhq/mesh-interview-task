@@ -4,6 +4,7 @@
   "description": "Mesh Interview Exercise",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --debug ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
