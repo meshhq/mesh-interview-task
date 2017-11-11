@@ -4,7 +4,7 @@ let oAuthSettings = null;
 switch (process.env.GITHUB_ACCESS_TYPE) {
     case 'TOKEN':
         if (!process.env.GITHUB_USER_TOKEN) {
-            throw new Error('Github 0Auth credetials missing!');
+            throw new Error('Github 0Auth credentials missing!');
         }
         oAuthSettings = {
             type: 'token',
