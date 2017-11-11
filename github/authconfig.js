@@ -1,16 +1,16 @@
 
 
 let oAuthSettings = null;
-swtich(process.env.GITHUB_ACCESS_TYPE){
+switch (process.env.GITHUB_ACCESS_TYPE) {
     case 'TOKEN':
         if (!process.env.GITHUB_USER_TOKEN) {
             throw new Error('Github 0Auth credetials missing!');
         }
         oAuthSettings = {
             type: 'token',
-            token: process.env.GITHUB_USER_TOKEN // '56361fa56e57f5d6a813b58e07845409b60ed3db'
+            token: process.env.GITHUB_USER_TOKEN
         }
-    break;
+        break;
 
     case 'OAUTH':
         if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET) {
@@ -22,10 +22,10 @@ swtich(process.env.GITHUB_ACCESS_TYPE){
             key: process.env.GITHUB_CLIENT_ID,
             secret: process.env.GITHUB_CLIENT_SECRET
         };
-    break;
+        break;
 
     default:
-    break;
+        break;
 }
 
 module.exports = oAuthSettings;
