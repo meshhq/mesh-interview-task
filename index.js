@@ -1,9 +1,12 @@
-const githubApi = require('./github');
+const Hapi = require("hapi");
+const GithubApi = require('./github');
+const ServerConfiguration = require('./server');
 
-// githubApi.getUserInfo('leonardojperez', (data) => {
-//     //console.log(data.repositories);
-// });
+const server = new Hapi.Server();
 
-githubApi.getUserInfo('octokit', (data) => {
-    //console.log(data.repositories);
+server.connection(ServerConfiguration.connection);
+server.route(ServerConfiguration.routes);
+
+server.start(function () {
+    console.log("GithubPayload API (HapiJS) running on 3010.");
 });
