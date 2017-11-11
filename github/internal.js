@@ -1,6 +1,8 @@
 const GitHubApi = require('github');
 const BbPromise = require('bluebird');
 
+const oAuthSettings = require('./authconfig');
+
 const github = new GitHubApi({
     debug: false,
     protocol: 'https',
@@ -12,21 +14,6 @@ const github = new GitHubApi({
     followRedirects: false,
     timeout: 5000
 });
-
-const oAuthSettings = {
-    type: 'token',
-    token: '56361fa56e57f5d6a813b58e07845409b60ed3db'
-};
-
-const oAuthSettings1 = {
-    type: 'oauth',
-    key: process.env.GITHUB_CLIENT_ID,
-    secret: process.env.GITHUB_CLIENT_SECRET
-};
-
-if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET) {
-    throw new Error('Github 0Auth credetials missing!');
-}
 
 github.authenticate(oAuthSettings);
 
