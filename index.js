@@ -1,5 +1,4 @@
 const Hapi = require("hapi");
-const GithubApi = require('./github');
 const ServerConfiguration = require('./server');
 
 const server = new Hapi.Server();
