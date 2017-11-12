@@ -1,4 +1,6 @@
-const Hapi = require("hapi");
+'use strict';
+
+const Hapi = require('hapi');
 const ServerConfiguration = require('./server');
 
 const server = new Hapi.Server();
@@ -6,6 +8,10 @@ const server = new Hapi.Server();
 server.connection(ServerConfiguration.connection);
 server.route(ServerConfiguration.routes);
 
-server.start(function () {
-    console.log("GithubPayload API (HapiJS) running on 3010.");
-});
+if (!module.parent) {
+    server.start(() => {
+        console.log('GithubPayload API (HapiJS) running on 3010.');
+    });
+}
+
+module.exports = server;
