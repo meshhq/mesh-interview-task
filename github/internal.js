@@ -52,7 +52,7 @@ module.exports = function (api) {
         },
 
         /**
-        * Returns an Repository collection object from GitHub RESTful (V3) API.
+        * Returns a promisified collection of Repositories object from GitHub RESTful (V3) API.
         * @constructor
         * @param {string} username - The github username to retrieve.        
         * @returns {Promise} - Promisified result
@@ -70,7 +70,7 @@ module.exports = function (api) {
         },
 
         /**
-        * Returns an Collection of commits from GitHub RESTful (V3) API.
+        * Returns a promisified collection of Commits from GitHub RESTful (V3) API.
         * @constructor
         * @param {string} owner - The github username to retrieve.     
         * @param {string} repositoryName - The github repository name owned by owner. 
@@ -88,6 +88,14 @@ module.exports = function (api) {
             });
         },
 
+        /**
+        * Returns a promisified collection of Commits from GitHub RESTful (V3) API.
+        * @constructor
+        * @param {string} owner - The github username to retrieve.     
+        * @param {string} repositoryName - The github repository name owned by owner. 
+        * @param {string} state - Pull request state. ["all"|"open"|"closed"]
+        * @returns {Promise} - Promisified result
+        */
         getPullRequests: (owner = '', repositoryName = '', state = State.ALL) => {
             if (!owner || !repositoryName) {
                 return getErrorPromise({ error: 'Owner or Repository name is missing.' });
@@ -104,6 +112,12 @@ module.exports = function (api) {
             });
         },
 
+        /**
+        * Returns a transformed object from input data.
+        * @constructor
+        * @param {object} data - The github username to retrieve.            
+        * @returns {object} - Transformed result
+        */
         transformResult: (data) => {
             if (!data) { return {}; }
 
