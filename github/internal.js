@@ -1,4 +1,7 @@
 'use strict';
+
+const State = require('./enumTypes').PullRequestState;
+
 const getPromise = (func, arg) => {
     return new Promise((resolve, reject) => {
         func(arg, (err, res) => {
@@ -27,17 +30,7 @@ module.exports = function (api) {
             return getPromise(api.getUser, {
                 username
             });
-        },
-
-        getFollowers: (username = '') => {
-            if (!username) {
-                return getErrorPromise({ error: 'Username is missing.' });
-            }
-
-            return getPromise(api.getFollowers, {
-                username
-            });
-        },
+        },     
 
         getRepos: (username = '') => {
             if (!username) {
@@ -63,25 +56,31 @@ module.exports = function (api) {
             });
         },
 
-        getPullRequests: (owner = '', repositoryName = '', state = 'all') => {
+        getPullRequests: (owner = '', repositoryName = '', state = State.ALL) => {
             if (!owner || !repositoryName) {
                 return getErrorPromise({ error: 'Owner or Repository name is missing.' });
+            }
+
+            if (![State.ALL, State.CLOSED, State.OPEN].includes(state.toLowerCase())) {
+                return getErrorPromise({ error: 'State is not valid value. ' + State });
             }
 
             return getPromise(api.getPullRequests, {
                 owner,
                 repo: repositoryName,
-                state //"open"|"closed"|"all";
+                state
             });
         },
         cleanResult: (data) => {
+            if (!data) { return {}; }
+
             return {
                 user: {
                     githubHandle: data.user.login,
                     githubURL: data.user.url,
                     avatarURL: data.user.avatar_url,
                     email: data.user.email,
-                    followerCount: data.followers.length,
+                    followerCount: data.user.followers,
                     repositories: data.repositories.map((el) => {
                         return {
                             name: el.name,

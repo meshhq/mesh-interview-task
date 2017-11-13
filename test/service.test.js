@@ -6,7 +6,7 @@ const Server = require('../index.js');
 describe('GithubApi', () => {
     describe('/POST githubPayload', function () {
         it('it should RETRIEVE user information', function (done) {
-            this.timeout(5000);
+            this.timeout(8000);
 
             Server.inject({
                 method: 'POST',

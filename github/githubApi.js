@@ -21,7 +21,6 @@ github.authenticate(oAuthSettings);
 
 module.exports = {
     getUser: github.users.getForUser,
-    getFollowers: github.users.getFollowersForUser,
     getRepos: github.repos.getForUser,
     getCommits: github.repos.getCommits,
     getPullRequests: github.pullRequests.getAll

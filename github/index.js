@@ -11,8 +11,7 @@ module.exports = {
         Co(function* () {
             const user = Internal.getUser(username);
             const repos = Internal.getRepos(username);
-            const followers = Internal.getFollowers(username);
-            const initialData = yield { followers, user, repos };
+            const initialData = yield { user, repos };
 
             const yeilded = [];
             initialData.repos.forEach((r) => {
@@ -27,7 +26,6 @@ module.exports = {
             const result = yield yeilded;
             return Internal.cleanResult({
                 user: initialData.user,
-                followers: initialData.followers,
                 repositories: result
             });
         }).then(cb);
