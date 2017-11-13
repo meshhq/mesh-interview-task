@@ -48,6 +48,10 @@ Please fork this repository into your personal account. When your work is ready 
 
 This task should not take you more than ~4 hours.
 
+### Submission
+
+Once you would like to submit, please send a pull request with your changes. Email the Mesh team member you have been interfacing with to let them know your project is ready for review.
+
 ### Help
 
 Please feel free to ping us with any questions you might have as you get going. Otherwise we are excited to see what you build!
