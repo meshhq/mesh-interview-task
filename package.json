@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./index.js",
     "start-dev": "nodemon --debug ./index.js",
-    "test": "nyc mocha --exit"
+    "test": "eslint . & nyc mocha --exit"
   },
   "repository": {
     "type": "git",
