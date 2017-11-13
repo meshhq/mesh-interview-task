@@ -1,8 +1,13 @@
-const Logger = require('logzio-nodejs').createLogger({
-    token: process.env.LOG_TOKEN,
-    host: 'listener.logz.io',
-    type: 'github-server'     // OPTIONAL (If none is set, it will be 'nodejs')
-});
+const Logger = require('logzio-nodejs');
+
+let _logger = {};
+if (process.env.LOG_TOKEN) {
+    _logger.createLogger({
+        token: process.env.LOG_TOKEN,
+        host: 'listener.logz.io',
+        type: 'github-server'     // OPTIONAL (If none is set, it will be 'nodejs')
+    });
+}
 
 module.exports = {
     log: function (data) {
@@ -10,7 +15,7 @@ module.exports = {
             return;
         }
 
-        Logger.log(
+        _logger.log(
             Object.assign({}, data, {
                 '@timestamp': new Date()
             })
