@@ -3,8 +3,8 @@
 const Github = require('../github');
 
 const connection = {
-    port: 3010,
-    host: 'localhost'
+    port: process.env.PORT || 3010,
+    host: '0.0.0.0'
 };
 
 const routes = [

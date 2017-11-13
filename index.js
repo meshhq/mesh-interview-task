@@ -10,7 +10,7 @@ server.route(ServerConfiguration.routes);
 
 if (!module.parent) {
     server.start(() => {
-        console.log('GithubPayload API (HapiJS) running on 3010.');
+        console.log(`GithubPayload API (HapiJS) running on ${ServerConfiguration.connection.port}.`);
     });
 }
 

@@ -13,7 +13,7 @@ const getPromise = (func, arg) => {
         func(arg, (err, res) => {
             if (err) {
                 console.log(err);
-                reject('');
+                reject({});
 
                 return;
             }

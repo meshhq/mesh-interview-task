@@ -4,7 +4,8 @@
   "description": "Mesh Interview Exercise",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --debug ./index.js",
+    "start": "node ./index.js",
+    "start-dev": "nodemon --debug ./index.js",
     "test": "nyc mocha"
   },
   "repository": {
@@ -26,14 +27,11 @@
     "bluebird": "3.5.1",
     "co": "4.6.0",
     "github": "12.0.1",
-    "hapi": "16.6.2",
-    "lodash": "4.17.4"
+    "hapi": "16.6.2"
   },
   "devDependencies": {
     "chai": "4.1.2",
-    "chai-http": "3.0.0",
     "mocha": "4.0.1",
-    "mock-require": "2.0.2",
     "nyc": "11.3.0",
     "sinon": "4.1.2",
     "sinon-stub-promise": "4.0.0"
