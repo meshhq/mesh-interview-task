@@ -1,8 +1,8 @@
-var Logger = require('logzio-nodejs').createLogger({
+const Logger = require('logzio-nodejs').createLogger({
     token: process.env.LOG_TOKEN,
     host: 'listener.logz.io',
     type: 'github-server'     // OPTIONAL (If none is set, it will be 'nodejs')
-})
+});
 
 module.exports = {
     log: function (data) {

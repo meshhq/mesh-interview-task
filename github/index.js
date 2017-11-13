@@ -3,16 +3,16 @@
 const Co = require('co');
 const githubApi = require('./githubApi');
 const Internal = require('./internal')(githubApi);
+const Logger = require('../logger');
 
 module.exports = {
-
     getUserInfo(username, cb) {
 
         Co(function* () {
             const user = Internal.getUser(username);
             const repos = Internal.getRepos(username);
 
-            let initialData
+            let initialData;
             initialData = yield { user, repos };
 
             const yeilded = [];
@@ -32,7 +32,7 @@ module.exports = {
             });
 
         }).then(cb, function (err) {
-            console.error(err.stack);
+            Logger.log(err);
         });
     }
 };

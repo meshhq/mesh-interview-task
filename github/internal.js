@@ -36,7 +36,7 @@ const getPromise = (func, arg) => {
  */
 const getErrorPromise = (error) => {
     return Promise.resolve(error);
-}
+};
 
 module.exports = function (api) {
     return {

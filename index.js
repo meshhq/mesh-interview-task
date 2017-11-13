@@ -10,6 +10,7 @@ server.route(ServerConfiguration.routes);
 
 if (!module.parent) {
     server.start(() => {
+        // eslint-disable-next-line no-console
         console.log(`GithubPayload API (HapiJS) running on ${ServerConfiguration.connection.port}.`);
     });
 }

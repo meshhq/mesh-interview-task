@@ -4,4 +4,4 @@ module.exports = {
         CLOSED: 'closed',
         OPEN: 'open'
     }
-}
+};

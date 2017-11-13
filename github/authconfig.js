@@ -1,4 +1,3 @@
-
 'use strict';
 
 const errorMessage = 'Github 0Auth credentials missing!';

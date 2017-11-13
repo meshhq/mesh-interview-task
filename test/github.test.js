@@ -1,30 +1,35 @@
 const chai = require('chai');
 const expect = chai.expect;
+
+const describe = require('mocha').describe;
+const it = require('mocha').it;
+const before = require('mocha').before;
+
 const sinon = require('sinon');
 
 const testData = {
     user: {
-        githubHandle: "LeonardoJPerez",
-        githubURL: "https://api.github.com/users/LeonardoJPerez",
-        avatarURL: "https://avatars0.githubusercontent.com/u/595741?v=4",
-        email: "find.leonardo@gmail.com",
+        githubHandle: 'LeonardoJPerez',
+        githubURL: 'https://api.github.com/users/LeonardoJPerez',
+        avatarURL: 'https://avatars0.githubusercontent.com/u/595741?v=4',
+        email: 'find.leonardo@gmail.com',
         followerCount: 1,
         repositories: [
             {
-                name: "AchieveIT.Test",
-                url: "https://api.github.com/repos/LeonardoJPerez/AchieveIT.Test",
+                name: 'AchieveIT.Test',
+                url: 'https://api.github.com/repos/LeonardoJPerez/AchieveIT.Test',
                 commitCount: 30,
                 pullRequestCount: 0
             },
             {
-                name: "amazon-kinesis-client-nodejs",
-                url: "https://api.github.com/repos/LeonardoJPerez/amazon-kinesis-client-nodejs",
+                name: 'amazon-kinesis-client-nodejs',
+                url: 'https://api.github.com/repos/LeonardoJPerez/amazon-kinesis-client-nodejs',
                 commitCount: 8,
                 pullRequestCount: 10
             },
             {
-                name: "HandyTools",
-                url: "https://api.github.com/repos/LeonardoJPerez/HandyTools",
+                name: 'HandyTools',
+                url: 'https://api.github.com/repos/LeonardoJPerez/HandyTools',
                 commitCount: 30,
                 pullRequestCount: 0
             }]
@@ -63,7 +68,7 @@ describe('GithubApi Internals', () => {
 
     describe('getUser function', () => {
         it('it should get user information based on a given Github username', function (done) {
-            var result = Internal
+            Internal
                 .getUser(testData.user.githubHandle)
                 .then(res => {
                     expect(res.githubHandle).to.equal(testData.user.githubHandle);
@@ -72,10 +77,10 @@ describe('GithubApi Internals', () => {
         });
 
         it('it should return Error object when no username is provided', function (done) {
-            var result = Internal
+            Internal
                 .getUser('')
                 .then(res => {
-                    expect(res.error).to.equal("Username is missing.");
+                    expect(res.error).to.equal('Username is missing.');
                     done();
                 });
         });
@@ -83,7 +88,7 @@ describe('GithubApi Internals', () => {
 
     describe('getRepos function', () => {
         it('it should get a user\'s repository collection by a Github username', function (done) {
-            var result = Internal
+            Internal
                 .getRepos(testData.user.githubHandle)
                 .then(res => {
                     expect(res.repositories).to.be.an('array');
@@ -94,10 +99,10 @@ describe('GithubApi Internals', () => {
         });
 
         it('it should return Error object when no username is provided', function (done) {
-            var result = Internal
+            Internal
                 .getRepos('')
                 .then(res => {
-                    expect(res.error).to.equal("Username is missing.");
+                    expect(res.error).to.equal('Username is missing.');
 
                     done();
                 });
@@ -106,7 +111,7 @@ describe('GithubApi Internals', () => {
 
     describe('getCommits function', () => {
         it('it should get repository\'s commit count by a Github owner and a repository name', function (done) {
-            var result = Internal
+            Internal
                 .getCommits(testData.user.githubHandle, testData.user.repositories[2].name)
                 .then(res => {
                     expect(res).to.be.an('object');
@@ -118,10 +123,10 @@ describe('GithubApi Internals', () => {
         });
 
         it('it should return Error object when no username is provided', function (done) {
-            var result = Internal
+            Internal
                 .getCommits()
                 .then(res => {
-                    expect(res.error).to.equal("Owner or Repository name is missing.");
+                    expect(res.error).to.equal('Owner or Repository name is missing.');
 
                     done();
                 });
@@ -130,7 +135,7 @@ describe('GithubApi Internals', () => {
 
     describe('getPullRequests function', () => {
         it('it should get repository\'s pull request count by a Github owner and a repository name', function (done) {
-            var result = Internal
+            Internal
                 .getPullRequests(testData.user.githubHandle, testData.user.repositories[1].name)
                 .then(res => {
                     expect(res).to.be.an('object');
@@ -142,10 +147,10 @@ describe('GithubApi Internals', () => {
         });
 
         it('it should return Error object when no username is provided', function (done) {
-            var result = Internal
+            Internal
                 .getPullRequests()
                 .then(res => {
-                    expect(res.error).to.equal("Owner or Repository name is missing.");
+                    expect(res.error).to.equal('Owner or Repository name is missing.');
 
                     done();
                 });
