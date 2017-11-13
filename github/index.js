@@ -13,14 +13,7 @@ module.exports = {
             const repos = Internal.getRepos(username);
 
             let initialData
-            try {
-                initialData = yield { user, repos };
-            } catch (error) {
-                // log error.
-                return {
-                    message: error.message
-                }
-            }
+            initialData = yield { user, repos };
 
             const yeilded = [];
             initialData.repos.forEach((r) => {
@@ -32,17 +25,12 @@ module.exports = {
                 });
             });
 
-            try {
-                const result = yield yeilded;
-                return Internal.transformResult({
-                    user: initialData.user,
-                    repositories: result
-                });
-            } catch (error) {
-                return {
-                    message: error.message
-                }
-            }
+            const result = yield yeilded;
+            return Internal.transformResult({
+                user: initialData.user,
+                repositories: result
+            });
+
         }).then(cb, function (err) {
             console.error(err.stack);
         });
