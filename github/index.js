@@ -24,7 +24,7 @@ module.exports = {
             });
 
             const result = yield yeilded;
-            return Internal.cleanResult({
+            return Internal.transformResult({
                 user: initialData.user,
                 repositories: result
             });

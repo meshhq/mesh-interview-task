@@ -2,6 +2,12 @@
 
 const State = require('./enumTypes').PullRequestState;
 
+/**
+ * Wraps the supplied function within a Promise.
+ * @param {function} func - The function to be wrapped.
+ * @param {object} arg - The arguments to call the func with.
+ * @returns {Promise}
+ */
 const getPromise = (func, arg) => {
     return new Promise((resolve, reject) => {
         func(arg, (err, res) => {
@@ -16,12 +22,25 @@ const getPromise = (func, arg) => {
     });
 };
 
+/**
+ * Return a Promise with an error.
+ * @constructor
+ * @param {string} error - The message to attach to the Error object.
+ * @returns {Promise}
+ */
 const getErrorPromise = (error) => {
     return Promise.resolve(error);
 }
 
 module.exports = function (api) {
     return {
+
+        /**
+        * Returns an User object from GitHub RESTful (V3) API.
+        * @constructor
+        * @param {string} username - The github username to retrieve.        
+        * @returns {Promise} - Promisified result.
+        */
         getUser: (username = '') => {
             if (!username) {
                 return getErrorPromise({ error: 'Username is missing.' });
@@ -30,8 +49,14 @@ module.exports = function (api) {
             return getPromise(api.getUser, {
                 username
             });
-        },     
+        },
 
+        /**
+        * Returns an Repository collection object from GitHub RESTful (V3) API.
+        * @constructor
+        * @param {string} username - The github username to retrieve.        
+        * @returns {Promise} - Promisified result
+        */
         getRepos: (username = '') => {
             if (!username) {
                 return getErrorPromise({ error: 'Username is missing.' });
@@ -44,6 +69,13 @@ module.exports = function (api) {
             });
         },
 
+        /**
+        * Returns an Collection of commits from GitHub RESTful (V3) API.
+        * @constructor
+        * @param {string} owner - The github username to retrieve.     
+        * @param {string} repositoryName - The github repository name owned by owner. 
+        * @returns {Promise} - Promisified result
+        */
         getCommits: (owner = '', repositoryName = '') => {
             if (!owner || !repositoryName) {
                 return getErrorPromise({ error: 'Owner or Repository name is missing.' });
@@ -71,7 +103,8 @@ module.exports = function (api) {
                 state
             });
         },
-        cleanResult: (data) => {
+
+        transformResult: (data) => {
             if (!data) { return {}; }
 
             return {

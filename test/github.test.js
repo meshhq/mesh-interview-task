@@ -152,10 +152,10 @@ describe('GithubApi Internals', () => {
         });
     });
 
-    describe('cleanResult function', () => {
+    describe('transformResult function', () => {
         it('it should return a user object when provided raw data.', function (done) {
             var result = Internal
-                .cleanResult({
+                .transformResult({
                     user: {
                         login: testData.user.githubHandle,
                         url: testData.user.githubURL,
@@ -182,13 +182,12 @@ describe('GithubApi Internals', () => {
         });
 
         it('it should return Error object when no username is provided', function (done) {
-            var result = Internal
-                .getPullRequests()
-                .then(res => {
-                    expect(res.error).to.equal("Owner or Repository name is missing.");
+            var result = Internal.transformResult();
 
-                    done();
-                });
+            expect(result).to.be.an('object');
+            expect(result).to.be.empty;
+
+            done();
         });
     });
 });
