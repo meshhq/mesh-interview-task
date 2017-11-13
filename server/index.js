@@ -12,10 +12,10 @@ const connection = {
 
 const routes = [
     {
-        method: 'POST',
-        path: '/githubPayload',
+        method: 'GET',
+        path: '/githubPayload/{user}',
         handler: function (req, reply) {
-            const user = req.payload.user;
+            const user = req.params.user;
 
             Github.getUserInfo(user, (data) => {
                 Logger.log({
@@ -28,8 +28,8 @@ const routes = [
         },
         config: {
             validate: {
-                payload: {
-                    user: Joi.string().alphanum().required()
+                params: {
+                    user: Joi.string().alphanum().min(3).required()
                 }
             }
         }
