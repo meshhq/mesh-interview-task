@@ -32,11 +32,17 @@ module.exports = {
                 });
             });
 
-            const result = yield yeilded;
-            return Internal.transformResult({
-                user: initialData.user,
-                repositories: result
-            });
+            try {
+                const result = yield yeilded;
+                return Internal.transformResult({
+                    user: initialData.user,
+                    repositories: result
+                });
+            } catch (error) {
+                return {
+                    message: error.message
+                }
+            }
         }).then(cb, function (err) {
             console.error(err.stack);
         });

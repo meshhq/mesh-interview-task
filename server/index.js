@@ -19,7 +19,6 @@ const routes = [
 
             Github.getUserInfo(user, (data) => {
                 Logger.log({
-                    '@timestamp': new Date(),
                     'data': data,
                     'level': 'info'
                 });

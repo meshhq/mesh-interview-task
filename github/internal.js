@@ -14,7 +14,6 @@ const getPromise = (func, arg) => {
         func(arg, (err, res) => {
             if (err) {
                 Logger.log({
-                    '@timestamp': new Date(),
                     'error': err,
                     'level': 'error'
                 });
