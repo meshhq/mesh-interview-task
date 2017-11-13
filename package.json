@@ -1,0 +1,42 @@
+{
+  "name": "mesh-interview-task",
+  "version": "1.0.0",
+  "description": "Mesh Interview Exercise",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "start-dev": "nodemon --debug ./index.js",
+    "test": "eslint . & nyc mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoJPerez/mesh-interview-task.git"
+  },
+  "keywords": [
+    "mesh",
+    "node",
+    "github"
+  ],
+  "author": "Leonardo J. Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoJPerez/mesh-interview-task/issues"
+  },
+  "homepage": "https://github.com/LeonardoJPerez/mesh-interview-task#readme",
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "co": "4.6.0",
+    "github": "12.0.1",
+    "hapi": "16.6.2",
+    "joi": "13.0.2",
+    "logzio-nodejs": "0.4.4"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "eslint": "4.11.0",
+    "mocha": "4.0.1",
+    "nyc": "11.3.0",
+    "sinon": "4.1.2",
+    "sinon-stub-promise": "4.0.0"
+  }
+}

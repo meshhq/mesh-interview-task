@@ -55,3 +55,27 @@ Once you would like to submit, please send a pull request with your changes. Ema
 ### Help
 
 Please feel free to ping us with any questions you might have as you get going. Otherwise we are excited to see what you build!
+
+### Instructions
+
+Make sure the environment the application gets executed contains the environment variables defined on _env.list.sample_. This file can be used when creating a docker image with this application.
+
+To run the application type:
+> npm run start-dev
+
+This should spin up the server with nodemon and monitor any changes to the source.
+
+To test the application:
+> npm test
+
+This command will execute eslint and the test suites under /test.
+
+To create a docker machine type the following:
+
+> docker build -t <your-name>/githubserver .
+
+To start a new container from this image:
+
+> docker run --env-file ./env.list -p 3010:80 -d <your-name>/githubserver
+
+Notice the _env.list_ filename. This is where the necessary environment variables will be stored. Make sure you DO NOT commit this file since it will contain sensitive information.
