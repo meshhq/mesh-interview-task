@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./index.js",
     "start-dev": "nodemon --debug ./index.js",
-    "test": "nyc mocha"
+    "test": "nyc mocha --exit"
   },
   "repository": {
     "type": "git",
