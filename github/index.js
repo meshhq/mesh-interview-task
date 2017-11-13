@@ -11,7 +11,16 @@ module.exports = {
         Co(function* () {
             const user = Internal.getUser(username);
             const repos = Internal.getRepos(username);
-            const initialData = yield { user, repos };
+
+            let initialData
+            try {
+                initialData = yield { user, repos };
+            } catch (error) {
+                // log error.
+                return {
+                    message: error.message
+                }
+            }
 
             const yeilded = [];
             initialData.repos.forEach((r) => {
@@ -28,6 +37,8 @@ module.exports = {
                 user: initialData.user,
                 repositories: result
             });
-        }).then(cb);
+        }).then(cb, function (err) {
+            console.error(err.stack);
+        });
     }
 };

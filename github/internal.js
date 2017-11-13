@@ -1,5 +1,6 @@
 'use strict';
 
+const Logger = require('../logger');
 const State = require('./enumTypes').PullRequestState;
 
 /**
@@ -12,11 +13,17 @@ const getPromise = (func, arg) => {
     return new Promise((resolve, reject) => {
         func(arg, (err, res) => {
             if (err) {
-                console.log(err);
-                reject({});
+                Logger.log({
+                    '@timestamp': new Date(),
+                    'error': err,
+                    'level': 'error'
+                });
+
+                reject({ message: JSON.parse(err.message).message });
 
                 return;
             }
+
             resolve(res.data);
         });
     });
