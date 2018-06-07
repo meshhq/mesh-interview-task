@@ -1,0 +1,25 @@
+{
+  "name": "mesh-interview-task",
+  "version": "1.0.0",
+  "description": "The Mesh interview task is to write a simple HTTP server that is integrated with the GitHub API. It can be written in whatever language you are most comfortable with. You can find all GitHub documentation at the following URL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idiose/mesh-interview-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idiose/mesh-interview-task/issues"
+  },
+  "homepage": "https://github.com/idiose/mesh-interview-task#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {}
+}
