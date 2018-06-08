@@ -1,0 +1,7 @@
+{
+  "github": {
+    "apiUrl": "https://api.github.com/graphql",
+    "login": "myGithubUsername",
+    "token": "myGithubToken"
+  }
+}
