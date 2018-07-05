@@ -4,54 +4,44 @@ The Mesh interview task is to write a simple HTTP server that is integrated with
 
 https://developer.github.com/
 
-### Implementation
 
-The server should expose a single API that returns a user payload containing information about your personal GitHub account. The payload should look like the following:
+## Run
+
+Built using [polka](https://github.com/lukeed/polka).
+
+First, locate and rename `config-sample.json` to `config.json`, then edit the file and add your GitHub username and GitHub token.
+
 
 ```
-GET /githubPayload
-
-{
-  user: {
-    githubHandle:
-    githubURL:
-    avatarURL:
-    email:
-    followerCount:
-    repositories: [
-      {
-        name:
-        url:
-        commitCount:
-        pullRequestCount:
-      },
-      {...}
-    ]
-  }
-}
+$ npm install && npm start
 ```
 
-### Considerations
 
- * The server should not contain any hard coded information. Rather, all payload information should come directly from GitHub's API. It is up to determine you how the integration will be built and the GitHub data will be processed.
- * Please be sure to strip out any personal information from your payload.
+## CLI
 
-### Quality
+This is an example CLI that could be used if installed. Can be ran using `npx . [username] -t [token]`.
 
-We would like you to treat this task as if you were doing it for a client - i.e. use the best practices that you would like to see in a piece of work for others. Keep in mind code formatting, project organization, documentation etc.
+```
+$ githubPayload --help
 
-### Project Submission
+  Usage
+	$ githubPayload [username] --token [token]
 
-Please fork this repository into your personal account. When your work is ready for review, please send us a link.
+	Options
+	  --token, -t  GitHub token
 
-### Time Expectation
+	Examples
+	  $ githubPayload awcross --token 3c970dc41e393f04295193b2339ca7c3c56290fa
+	  {
+		"user": {
+		  "githubHandle": "awcross",
+		  "githubURL": "https://github.com/awcross",
+		  ...
+		}
+	  }
+```
 
-This task should not take you more than ~4 hours.
 
-### Submission
+## License
 
-Once you would like to submit, please send a pull request with your changes. Email the Mesh team member you have been interfacing with to let them know your project is ready for review.
-
-### Help
-
-Please feel free to ping us with any questions you might have as you get going. Otherwise we are excited to see what you build!
+MIT © [Alex Cross](https://alexcross.io)
