@@ -1,0 +1,56 @@
+{
+	"user": {
+		"login": "awcross",
+		"url": "https://github.com/awcross",
+		"avatarUrl": "https://avatars1.githubusercontent.com/u/1489573?v=4",
+		"email": "",
+		"followers": {
+			"totalCount": 7
+		},
+		"repositories": {
+			"nodes": [{
+					"name": "hubot-seen",
+					"url": "https://github.com/awcross/hubot-seen",
+					"defaultBranchRef": {
+						"target": {
+							"history": {
+								"totalCount": 25
+							}
+						}
+					},
+					"pullRequests": {
+						"totalCount": 0
+					}
+				},
+				{
+					"name": "craft-config-example",
+					"url": "https://github.com/awcross/craft-config-example",
+					"defaultBranchRef": {
+						"target": {
+							"history": {
+								"totalCount": 3
+							}
+						}
+					},
+					"pullRequests": {
+						"totalCount": 0
+					}
+				},
+				{
+					"name": "customevent",
+					"url": "https://github.com/awcross/customevent",
+					"defaultBranchRef": {
+						"target": {
+							"history": {
+								"totalCount": 11
+							}
+						}
+					},
+					"pullRequests": {
+						"totalCount": 1
+					}
+				}
+			]
+		}
+	}
+}

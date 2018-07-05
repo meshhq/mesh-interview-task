@@ -1,0 +1,29 @@
+{
+    "user": {
+        "githubHandle": "awcross",
+        "githubURL": "https://github.com/awcross",
+        "avatarURL": "https://avatars1.githubusercontent.com/u/1489573?v=4",
+        "email": "",
+        "followerCount": 7,
+        "repositories": [
+            {
+                "name": "hubot-seen",
+                "url": "https://github.com/awcross/hubot-seen",
+                "commitCount": 25,
+                "pullRequestCount": 0
+            },
+            {
+                "name": "craft-config-example",
+                "url": "https://github.com/awcross/craft-config-example",
+                "commitCount": 3,
+                "pullRequestCount": 0
+            },
+            {
+                "name": "customevent",
+                "url": "https://github.com/awcross/customevent",
+                "commitCount": 11,
+                "pullRequestCount": 1
+            }
+		]
+	}
+}
